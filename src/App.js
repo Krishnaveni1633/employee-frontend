@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Employees from './pages/Employees';
 import AddEmployee from './pages/AddEmployee';
+import EditEmployee from './pages/EditEmployee';
 
 function PrivateRoute({ children }) {
   const token = localStorage.getItem('token');
@@ -27,6 +28,9 @@ function App() {
         } />
         <Route path="/add-employee" element={
           <PrivateRoute><AddEmployee /></PrivateRoute>
+        } />
+        <Route path="/edit-employee/:id" element={
+          <PrivateRoute><EditEmployee /></PrivateRoute>
         } />
       </Routes>
     </Router>
