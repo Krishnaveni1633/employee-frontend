@@ -104,6 +104,12 @@ function Employees() {
                 <td style={styles.td}>₹{emp.salary.toLocaleString()}</td>
                 <td style={styles.td}>
                   <button
+                    style={styles.editBtn}
+                    onClick={() => navigate(`/edit-employee/${emp.id}`)}
+                  >
+                    Edit
+                  </button>
+                  <button
                     style={styles.deleteBtn}
                     onClick={() => handleDelete(emp.id)}
                   >
@@ -198,6 +204,15 @@ const styles = {
   },
   tableRow: { borderBottom: '1px solid #eee' },
   td: { padding: '12px 15px', color: '#333' },
+  editBtn: {
+    padding: '6px 12px',
+    backgroundColor: '#1a73e8',
+    color: 'white',
+    border: 'none',
+    borderRadius: '4px',
+    cursor: 'pointer',
+    marginRight: '8px',
+  },
   deleteBtn: {
     padding: '6px 12px',
     backgroundColor: '#ff4444',
